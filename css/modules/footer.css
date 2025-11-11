@@ -1,0 +1,274 @@
+/* Footer */
+.footer {
+    background: var(--secondary-dark);
+    background-image: url('../../img/fondo-footer.jpg'); /* Imagen de fondo del footer */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax opcional */
+    color: white;
+    position: relative;
+}
+
+/* Overlay para mejorar legibilidad del texto */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 34, 62, 0.336); /* Overlay oscuro para legibilidad */
+    z-index: 0;
+}
+
+/* Barra superior de políticas */
+.footer-policies {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1; /* Sobre el overlay */
+}
+
+.policies-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.policy-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    padding: 0.25rem 0.5rem;
+}
+
+.policy-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.policy-separator {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0.25rem;
+}
+
+/* Contenido principal del footer */
+.footer-main {
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Sobre el overlay */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    position: relative;
+    z-index: 1; /* Sobre el overlay */
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Columna 1: Más Información */
+.info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 30px;
+    text-align: center;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-content strong {
+    display: block;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.info-content p {
+    margin: 0.25rem 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Columna 2: Enlaces de interés */
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.footer-nav a::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--primary-color);
+    padding-left: 1.5rem;
+}
+
+.footer-nav a:hover::before {
+    opacity: 1;
+}
+
+/* Columna 3: Ubícanos */
+.maps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.map-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: white;
+}
+
+.map-wrapper iframe {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+/* Barra inferior */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1; /* Sobre el overlay */
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom-content p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.back-to-top {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.back-to-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .policies-links {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .policy-separator {
+        display: none;
+    }
+
+    .maps-container {
+        gap: 1.5rem;
+    }
+
+    .map-wrapper iframe {
+        height: 200px;
+    }
+
+    .footer-bottom-content {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-main {
+        padding: 2rem 0;
+    }
+
+    .footer-title {
+        font-size: 1.1rem;
+    }
+
+    .info-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .map-wrapper iframe {
+        height: 180px;
+    }
+}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de Reclamaciones - GDS INFRAESTRUCTURA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .reclamaciones-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+        }
+        .reclamaciones-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .reclamaciones-header h1 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .reclamaciones-header p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .legal-info {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        .legal-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+        .legal-info p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        .legal-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .legal-info a:hover {
+            text-decoration: underline;
+        }
+        .reclamaciones-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+        .form-section {
+            margin-bottom: 2rem;
+        }
+        .form-section-title {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        .form-group label .required {
+            color: var(--error-color);
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .form-note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+        .form-message.success {
+            background: #d4edda;
+            color: var(--success-color);
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        .form-message.error {
+            background: #f8d7da;
+            color: var(--error-color);
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .reclamaciones-container {
+                padding: 1rem;
+            }
+            .reclamaciones-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reclamaciones-container">
+        <div class="reclamaciones-header">
+            <h1>Libro de Reclamaciones</h1>
+            <p>GDS INFRAESTRUCTURA - De conformidad con la Ley N.° 29571</p>
+        </div>
+        
+        <div class="legal-info">
+            <h3>Información Legal</h3>
+            <p><strong>Normativa aplicable:</strong> Ley N.° 29571 - Código de Protección y Defensa del Consumidor</p>
+            <p>De acuerdo con la <a href="https://www.gob.pe/institucion/indecopi/normas-legales/1244218-29571" target="_blank">Ley N.° 29571</a>, todas las empresas están obligadas a mantener un Libro de Reclamaciones a disposición de los consumidores.</p>
+            <p>Su reclamación será atendida en un plazo máximo de 30 días hábiles, conforme a la normativa vigente.</p>
+        </div>
+
+        <form id="reclamacion-form" class="reclamaciones-form">
+            <!-- Datos del Consumidor -->
+            <div class="form-section">
+                <h3 class="form-section-title">Datos del Consumidor</h3>
+                
+                <div class="form-group">
+                    <label for="tipo-documento">Tipo de Documento <span class="required">*</span></label>
+                    <select id="tipo-documento" name="tipoDocumento" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="dni">DNI</option>
+                        <option value="ce">Carné de Extranjería</option>
+                        <option value="pasaporte">Pasaporte</option>
+                        <option value="ruc">RUC</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="numero-documento">Número de Documento <span class="required">*</span></label>
+                    <input type="text" id="numero-documento" name="numeroDocumento" required maxlength="20">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombres">Nombres <span class="required">*</span></label>
+                        <input type="text" id="nombres" name="nombres" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos <span class="required">*</span></label>
+                        <input type="text" id="apellidos" name="apellidos" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefono">Teléfono <span class="required">*</span></label>
+                        <input type="tel" id="telefono-reclamo" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico <span class="required">*</span></label>
+                        <input type="email" id="correo-reclamo" name="correo" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección <span class="required">*</span></label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="distrito">Distrito <span class="required">*</span></label>
+                        <input type="text" id="distrito" name="distrito" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="provincia">Provincia <span class="required">*</span></label>
+                        <input type="text" id="provincia" name="provincia" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Datos del Bien o Servicio Reclamado -->
+            <div class="form-section">
+                <h3 class="form-section-title">Datos del Bien o Servicio Reclamado</h3>
+                
+                <div class="form-group">
+                    <label for="tipo-bien">Tipo de Bien o Servicio <span class="required">*</span></label>
+                    <select id="tipo-bien" name="tipoBien" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="construccion">Construcción</option>
+                        <option value="infraestructura">Infraestructura</option>
+                        <option value="remodelacion">Remodelación</option>
+                        <option value="consultoria">Consultoría</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha-compra">Fecha de Contratación/Compra <span class="required">*</span></label>
+                    <input type="date" id="fecha-compra" name="fechaCompra" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="monto">Monto Reclamado (S/)</label>
+                    <input type="number" id="monto" name="monto" min="0" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+
+            <!-- Detalle de la Reclamación -->
+            <div class="form-section">
+                <h3 class="form-section-title">Detalle de la Reclamación</h3>
+                
+                <div class="form-group">
+                    <label for="tipo-reclamo">Tipo de Reclamación <span class="required">*</span></label>
+                    <select id="tipo-reclamo" name="tipoReclamo" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="incumplimiento">Incumplimiento de contrato</option>
+                        <option value="defecto">Producto defectuoso</option>
+                        <option value="servicio">Servicio deficiente</option>
+                        <option value="publicidad">Publicidad engañosa</option>
+                        <option value="garantia">Garantía</option>
+                        <option value="reembolso">Reembolso</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="detalle-reclamo">Detalle de la Reclamación <span class="required">*</span></label>
+                    <textarea id="detalle-reclamo" name="detalleReclamo" required placeholder="Describa detalladamente su reclamación, incluyendo fecha, lugar, y cualquier otra información relevante..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="pedido">¿Qué solicita? <span class="required">*</span></label>
+                    <textarea id="pedido" name="pedido" required placeholder="Indique qué espera obtener como solución a su reclamación (reembolso, reparación, cambio, compensación, etc.)..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-note">
+                <strong>Nota importante:</strong> Todos los campos marcados con asterisco (*) son obligatorios. La información proporcionada será utilizada únicamente para el procesamiento de su reclamación de acuerdo con la Ley N.° 29733 - Ley de Protección de Datos Personales.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">Registrar Reclamación</button>
+            <div id="form-message" class="form-message"></div>
+        </form>
+
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+    </div>
+
+    <script>
+        // Manejo del formulario de reclamaciones
+        document.getElementById('reclamacion-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formMessage = document.getElementById('form-message');
+            const formData = new FormData(this);
+            
+            // Simular envío (aquí se conectaría con el backend)
+            formMessage.className = 'form-message success';
+            formMessage.textContent = 'Su reclamación ha sido registrada exitosamente. Número de registro: ' + Date.now() + '. Nos pondremos en contacto con usted en un plazo máximo de 30 días hábiles.';
+            
+            // Limpiar formulario
+            this.reset();
+            
+            // Scroll al mensaje
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
+</body>
+</html>
+

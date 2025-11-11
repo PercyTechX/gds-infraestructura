@@ -1,0 +1,18 @@
+/* Variables de colores - Paleta para construcción */
+:root {
+    --primary-color: #ef7b0c;        /* Naranja vibrante */
+    --primary-dark: #d66a0b;        /* Naranja oscuro */
+    --secondary-color: #00223e;     /* Azul oscuro */
+    --secondary-dark: #00223e;      /* Azul más oscuro */
+    --accent-color: #00223e;        /* Azul medio */
+    --text-dark: #2C3E50;           /* Gris oscuro */
+    --text-light: #6C757D;          /* Gris claro */
+    --bg-light: #F8F9FA;            /* Fondo claro */
+    --bg-white: #FFFFFF;            /* Blanco */
+    --success-color: #28A745;       /* Verde éxito */
+    --error-color: #DC3545;         /* Rojo error */
+    --border-color: #DEE2E6;        /* Gris borde */
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+

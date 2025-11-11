@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDS INFRAESTRUCTURA - Construcción y Desarrollo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header / Navegación -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="#inicio">
+                        <img src="img/logo-azul.png" alt="GDS INFRAESTRUCTURA" class="logo">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#cotizacion-form" class="btn-nav">Cotiza</a></li>
+                    
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('img/hero01.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('img/hero02.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('img/hero03.jpg');"></div>
+            
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Construyendo el Futuro</h2>
+                <p class="hero-subtitle">Excelencia en infraestructura y desarrollo de proyectos de construcción</p>
+                <a href="#cotiza" class="btn btn-primary">Solicitar Cotización</a>
+            </div>
+        </div>
+        <!-- Indicadores de slides -->
+        <div class="hero-indicators">
+            <span class="hero-indicator active" data-slide="0"></span>
+            <span class="hero-indicator" data-slide="1"></span>
+            <span class="hero-indicator" data-slide="2"></span>
+            <span class="hero-indicator" data-slide="3"></span>
+        </div>
+    </section>
+
+    <!-- Proyectos Section -->
+    <section id="proyectos" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Proyectos</h2>
+                <p>Algunos de nuestros trabajos destacados</p>
+            </div>
+            <div class="projects-carousel-wrapper">
+                <div class="swiper projects-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/proyectos/proyecto01.jpeg" alt="Proyecto Residencial" onerror="this.parentElement.classList.add('placeholder')">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Albino Herrera</h3>
+                                    <p>Impresión de local nuevo para el cliente MIFARMA - CALLAO</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/proyectos/proyecto02.jpeg" alt="Infraestructura Vial" onerror="this.parentElement.classList.add('placeholder')">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Tinka ATE</h3>
+                                    <p>Implementeacion de local nuevo para el cliente TINKA - Ate Vitarte</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/proyectos/proyecto03.jpeg" alt="Centro Comercial" onerror="this.parentElement.classList.add('placeholder')">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Centro Comercial</h3>
+                                    <p>Complejo comercial de 15,000 m² con estacionamiento y áreas de esparcimiento.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/proyectos/proyecto04.jpeg" alt="Edificio Corporativo" onerror="this.parentElement.classList.add('placeholder')">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Edificio Corporativo</h3>
+                                    <p>Edificio de oficinas de 12 pisos con tecnología moderna y diseño sostenible.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/proyectos/proyecto05.jpeg" alt="Puente Peatonal" onerror="this.parentElement.classList.add('placeholder')">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Miniso Jockey</h3>
+                                    <p>Implementacion de local comercial uno de los principales centros comerciales.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/proyectos/proyecto06.jpeg" alt="Planta Industrial" onerror="this.parentElement.classList.add('placeholder')">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Miniso Villa Maria</h3>
+                                    <p>Implementacion de local comercial uno de los principales centros comerciales.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="img/proyectos/proyecto06.jpeg" alt="Planta Industrial" onerror="this.parentElement.classList.add('placeholder')">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Miniso Villa Maria</h3>
+                                    <p>Implementacion de local comercial uno de los principales centros comerciales.</p>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <!-- Paginación -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Navegación -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="section">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <img src="img/obrero-gds.png" alt="Equipo GDS INFRAESTRUCTURA">
+                </div>
+                <div class="about-content">
+                    <span class="about-tag">SOBRE NOSOTROS</span>
+                    <h2 class="about-title">MÁS DE <span class="highlight-orange">12 AÑOS</span> DE EXPERIENCIA OBTENIDA</h2>
+                    <p class="about-description">
+                        Somos una empresa con un equipo multidisciplinario de profesionales con amplia experiencia para lograr la excelencia en la gestión de la construcción y apoyar a nuestros clientes en sus desafíos y necesidades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Servicios</h2>
+                <p>Soluciones integrales en construcción</p>
+            </div>
+            <div class="services-carousel-wrapper">
+                <div class="services-carousel">
+                    <div class="services-track" id="services-track">
+                        <div class="service-card" data-service="construccion-civil">
+                            <h3>Construcción Civil</h3>
+                            <p>Construcción, implementación, remodelación tiendas comerciales.</p>
+                            <button class="service-card-btn">Ver más</button>
+                        </div>
+                        <div class="service-card" data-service="infraestructura">
+                            <h3>Infraestructura</h3>
+                            <p>Carreteras, puentes , colegios, obras públicas, etc.</p>
+                            <button class="service-card-btn">Ver más</button>
+                        </div>
+                        <div class="service-card" data-service="remodelaciones">
+                            <h3>Remodelaciones</h3>
+                            <p>Renovación, mejoras estructurales, reformas, rehabilitación, modernización, etc.</p>
+                            <button class="service-card-btn">Ver más</button>
+                        </div>
+                        <div class="service-card" data-service="consultoria">
+                            <h3>Consultoría</h3>
+                            <p>Gerencia de proyectos, supervisión de obras, asesoría y consultoría.</p>
+                            <button class="service-card-btn">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-navigation">
+                    <button class="services-nav-btn prev-btn" id="services-prev" aria-label="Anterior">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="services-nav-btn next-btn" id="services-next" aria-label="Siguiente">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="services-indicators" id="services-indicators"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clientes Section -->
+    <section id="clientes" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Clientes</h2>
+                <p>Empresas que confían en nosotros</p>
+            </div>
+            <div class="clients-container">
+                <div class="clients-track">
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente01.png" alt="Cliente 1" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 1</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente02.png" alt="Cliente 2" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 2</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente03.png" alt="Cliente 3" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 3</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente04.png" alt="Cliente 4" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 4</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente05.png" alt="Cliente 5" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 5</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente06.png" alt="Cliente 6" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 6</div>
+                    </div>
+                    <!-- Duplicados para efecto infinito -->
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente01.png" alt="Cliente 1" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 1</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente02.png" alt="Cliente 2" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 2</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente03.png" alt="Cliente 3" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 3</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente04.png" alt="Cliente 4" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 4</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente05.png" alt="Cliente 5" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 5</div>
+                    </div>
+                    <div class="client-logo">
+                        <img src="img/clientes/cliente06.png" alt="Cliente 6" onerror="this.style.display='none'">
+                        <div class="client-placeholder">Cliente 6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section id="testimonios" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Testimonios</h2>
+                <p>Lo que nuestros clientes opinan sobre nosotros</p>
+            </div>
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-card-header">
+                        <div class="testimonial-avatar">
+                            <img src="img/testimonio/walter-vargas.jfif" alt="Testimonio Cliente 1">
+                        </div>
+
+                    </div>
+                    <div class="testimonial-content">
+                        <h3>Walter Vargas</h3>
+                        <span>Encargado de mantenimiento - OXXO</span>
+                        <p>“GDS Infraestructura superó nuestras expectativas. Su equipo mantuvo una comunicación impecable y entregó el proyecto antes de lo programado.”</p>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-card-header">
+                        <div class="testimonial-avatar">
+                            <img src="img/testimonios/testimonio02.jpg" alt="Testimonio Cliente 2" onerror="this.src='https://i.pravatar.cc/200?img=26'">
+                        </div>
+
+                    </div>
+                    <div class="testimonial-content">
+                        <h3>Ricardo Salazar</h3>
+                        <span>Director Comercial - Tinka</span>
+                        <p>“El profesionalismo de GDS se nota en cada detalle. Han sido aliados clave para la implementación de nuestras nuevas tiendas.”</p>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-card-header">
+                        <div class="testimonial-avatar">
+                            <img src="img/testimonios/testimonio03.jpg" alt="Testimonio Cliente 3" onerror="this.src='https://i.pravatar.cc/200?img=37'">
+                        </div>
+
+                    </div>
+                    <div class="testimonial-content">
+                        <h3>María Ortega</h3>
+                        <span>Jefa de Proyectos - Miniso Perú</span>
+                        <p>“Su compromiso con la calidad y la seguridad fue esencial para la apertura de nuestras tiendas. Los recomiendo totalmente.”</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cotiza tu Trabajo Section -->
+    <section id="cotiza" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cotiza tu Trabajo</h2>
+                <p>Completa el formulario y nos pondremos en contacto contigo</p>
+            </div>
+            <div class="form-container">
+                <form id="cotizacion-form" class="cotizacion-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo-proyecto">Tipo de Proyecto *</label>
+                        <select id="tipo-proyecto" name="tipoProyecto" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="construccion-civil">Construcción Civil</option>
+                            <option value="infraestructura">Infraestructura</option>
+                            <option value="remodelacion">Remodelación</option>
+                            <option value="consultoria">Consultoría</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje / Descripción del Proyecto *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="aceptaTerminos" required>
+                            <span>Acepto los <a href="terminos-condiciones.html" target="_blank" style="color: var(--primary-color); text-decoration: underline;">términos y condiciones</a> *</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">Solicita tu Cotización</button>
+                    <div id="form-message" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Barra superior de políticas -->
+        <div class="footer-policies">
+            <div class="container">
+                <div class="policies-links">
+                    <a href="docs/politicas/politica-ambiental.pdf" download class="policy-link">Política Ambiental</a>
+                    <span class="policy-separator">|</span>
+                    <a href="docs/politicas/politica-calidad.pdf" download class="policy-link">Política de Calidad</a>
+                    <span class="policy-separator">|</span>
+                    <a href="docs/politicas/politica-seguridad-salud.pdf" download class="policy-link">Política de Seguridad y Salud en el Trabajo</a>
+                    <span class="policy-separator">|</span>
+                    <a href="docs/politicas/politica-igualdad-equidad.pdf" download class="policy-link">Política de Igualdad y Equidad</a>
+                    <span class="policy-separator">|</span>
+                    <a href="libro-reclamaciones.html" class="policy-link">Libro de Reclamaciones</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido principal del footer -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <!-- Columna 1: Más Información -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">Más Información</h3>
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div class="info-content">
+                                <strong>Oficina Principal</strong>
+                                <p>956 265 252</p>
+                                <p>949 859 858</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">✉️</div>
+                            <div class="info-content">
+                                <strong>Escríbenos un mensaje</strong>
+                                <p>ventas@gds.pe</p>
+                                <p>mserrano@gds.pe</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div class="info-content">
+                                <strong>Ubicación</strong>
+                                <p>San Martin de Porres - Lima Perú</p>
+                                <p>Chuquibambilla - Grau - Apurimac</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Enlaces de interés -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">Enlaces de interés</h3>
+                        <nav class="footer-nav">
+                            <a href="#inicio">INICIO</a>
+                            <a href="#nosotros">NOSOTROS</a>
+                            <a href="#servicios">SERVICIOS</a>
+                            <a href="#proyectos">PROYECTOS</a>
+                            <a href="#clientes">CLIENTES</a>
+                            <a href="#cotiza">CONTACTO</a>
+                        </nav>
+                    </div>
+
+                    <!-- Columna 3: Ubícanos -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">Ubícanos</h3>
+                        <div class="maps-container">
+                            <div class="map-wrapper">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.974742664577!2d-77.1061801251241!3d-11.976249488255098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cde01238640d%3A0xbba686257c894032!2sGDS%20Infraestructura!5e0!3m2!1ses-419!2spe!4v1762373931138!5m2!1ses-419!2spe"
+                                    width="100%" 
+                                    height="150" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Mapa - San Martín de Porres">
+                                </iframe>
+                            </div>
+                            <div class="map-wrapper">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15478.804813976782!2d-72.71057813760423!3d-14.094807643171196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916c61001fc2d2bf%3A0xfe6e2f3c36356b12!2sChahuarinay!5e0!3m2!1ses-419!2spe!4v1762374010001!5m2!1ses-419!2spe"
+                                    width="100%" 
+                                    height="150" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Mapa - Chuquibambilla">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra inferior -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 GDS INFRAESTRUCTURA | Todos los Derechos Reservados | Desarrollado por <a href="https://percytech.net" target="_blank" style="color: var(--primary-color); text-decoration: underline;"></a>TI</a></p>
+                    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Servicios -->
+    <div id="service-modal" class="service-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Cerrar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h2 class="modal-title" id="modal-title"></h2>
+            <div class="modal-gallery" id="modal-gallery"></div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
+

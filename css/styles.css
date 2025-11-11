@@ -1,0 +1,13 @@
+/* Importar módulos CSS */
+@import url('./modules/variables.css');
+@import url('./modules/base.css');
+@import url('./modules/header.css');
+@import url('./modules/hero.css');
+@import url('./modules/buttons.css');
+@import url('./modules/sections.css');
+@import url('./modules/clients.css');
+@import url('./modules/forms.css');
+@import url('./modules/modal.css');
+@import url('./modules/footer.css');
+@import url('./modules/animations.css');
+@import url('./modules/responsive.css');

@@ -1,0 +1,795 @@
+/* Sections */
+.section {
+    padding: 5rem 0;
+}
+
+/* Reducir padding para sección Nosotros */
+#nosotros.section {
+    padding: 3rem 0;
+}
+
+/* Ajustar sección Proyectos para centrar contenido */
+#proyectos.section {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    #proyectos.section {
+        min-height: auto;
+        display: block;
+        padding: 2rem 0;
+    }
+}
+
+/* Sección Cotiza a pantalla completa */
+#cotiza.section {
+    padding: 3rem 0;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+}
+
+#cotiza .container {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #cotiza.section {
+        min-height: auto;
+        display: block;
+        padding: 2rem 0;
+    }
+}
+
+.section-alt {
+    background: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* About Section */
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.about-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-image.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 600px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-content.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-tag {
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-orange {
+    color: var(--primary-color);
+}
+
+.about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Responsive About Section */
+@media (max-width: 968px) {
+    .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-image {
+        min-height: 400px;
+        order: 1;
+        transform: translateY(-50px); /* Cambiar a animación vertical en móvil */
+    }
+
+    .about-image.animate {
+        transform: translateY(0);
+    }
+
+    .about-content {
+        order: 2;
+        transform: translateY(50px); /* Cambiar a animación vertical en móvil */
+    }
+
+    .about-content.animate {
+        transform: translateY(0);
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-wrapper {
+        gap: 2rem;
+    }
+
+    .about-image {
+        min-height: 300px;
+        max-height: 350px;
+    }
+
+    .about-image img {
+        max-width: 80%;
+        max-height: 300px;
+    }
+
+    .about-title {
+        font-size: 1.75rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-image {
+        min-height: 250px;
+        max-height: 280px;
+    }
+
+    .about-image img {
+        max-width: 70%;
+        max-height: 250px;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
+    }
+
+    .about-tag {
+        font-size: 1rem;
+    }
+}
+
+/* Services Section - Carrusel */
+.services-carousel-wrapper {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.services-carousel {
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.services-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+    flex: 0 0 calc(33.333% - 1.33rem);
+    min-width: 0;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Tarjetas de servicios con imagen de fondo */
+.service-card[data-service="construccion-civil"] {
+    background-image: url('../../img/ingeniero-mitad.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-right: 3rem; /* Espacio adicional para la imagen */
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card[data-service="infraestructura"] {
+    background-image: url('../../img/ingeniero-mitad.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-right: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card[data-service="remodelaciones"] {
+    background-image: url('../../img/ingeniero-mitad.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-right: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card[data-service="consultoria"] {
+    background-image: url('../../img/ingeniero-mitad.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-right: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Botón "Ver más" para todas las tarjetas */
+.service-card[data-service] .service-card-btn {
+    margin-top: auto; /* Empujar el botón hacia abajo */
+}
+
+.service-card:active {
+    transform: scale(0.98);
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1; /* Asegurar que el texto esté sobre la imagen */
+}
+
+.service-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin: 0;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1; /* Asegurar que el texto esté sobre la imagen */
+}
+
+/* Botón "Ver más" en tarjeta de servicios */
+.service-card-btn {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    align-self: flex-start;
+    display: inline-block;
+}
+
+/* Navegación del carrusel */
+.services-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.services-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.services-nav-btn:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.services-nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: var(--text-light);
+    color: var(--text-light);
+}
+
+/* Indicadores */
+.services-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.services-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 34, 62, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.services-indicator.active {
+    background: var(--primary-color);
+    width: 32px;
+    border-radius: 6px;
+    border-color: var(--primary-color);
+}
+
+.services-indicator:hover {
+    background: var(--primary-color);
+    opacity: 0.7;
+}
+
+/* Responsive Services */
+@media (max-width: 1024px) {
+    .service-card {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        flex: 0 0 calc(100% - 0rem);
+    }
+
+    .service-card[data-service="construccion-civil"],
+    .service-card[data-service="infraestructura"],
+    .service-card[data-service="remodelaciones"],
+    .service-card[data-service="consultoria"] {
+        padding-right: 2.5rem; /* Reducir padding en móvil */
+        background-size: 200px auto; /* Imagen más pequeña en móvil */
+    }
+
+    .services-navigation {
+        margin-top: 1.5rem;
+    }
+
+    .services-nav-btn {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Projects Section - Swiper Carrusel */
+.projects-carousel-wrapper {
+    margin-top: 1rem;
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.projects-swiper--static {
+    padding: 1.5rem 0;
+}
+
+.projects-swiper--static .swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+    transform: none !important;
+    will-change: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 1.25rem;
+    margin: 0 -1.25rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.projects-swiper--static .swiper-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.projects-swiper--static .swiper-slide {
+    flex: 0 0 calc(80vw);
+    max-width: 320px;
+    min-width: 260px;
+    opacity: 1 !important;
+    scroll-snap-align: center;
+}
+
+.projects-swiper--static .swiper-button-next,
+.projects-swiper--static .swiper-button-prev,
+.projects-swiper--static .swiper-pagination {
+    display: none !important;
+}
+
+.projects-swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: min(350px, 80vw);
+    height: auto;
+}
+
+.swiper-slide-active .project-card {
+    transform: scale(1.05);
+}
+
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    position: relative;
+}
+
+.project-image.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    will-change: transform;
+}
+
+.project-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.project-info p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+/* Navegación Swiper */
+.projects-swiper .swiper-button-next,
+.projects-swiper .swiper-button-prev {
+    color: var(--primary-color);
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.projects-swiper .swiper-button-next:hover,
+.projects-swiper .swiper-button-prev:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.projects-swiper .swiper-button-next::after,
+.projects-swiper .swiper-button-prev::after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Paginación Swiper */
+.projects-swiper .swiper-pagination-bullet {
+    background: var(--primary-color);
+    opacity: 0.5;
+    width: 12px;
+    height: 12px;
+}
+
+.projects-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 32px;
+    border-radius: 6px;
+}
+
+.projects-swiper .swiper-pagination {
+    position: static;
+    margin-top: 1.5rem;
+}
+
+/* Testimonios */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+
+.testimonial-card-header {
+    background: linear-gradient(135deg, #001f3f, #004d7a);
+    padding: 2.5rem 1.5rem 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: padding 0.4s ease;
+    min-height: 120px;
+}
+
+.testimonial-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 6px solid white;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translate(-50%, 0);
+    transition: all 0.5s ease;
+    background: white;
+}
+
+.testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-left: auto;
+}
+
+.testimonial-social a {
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-social a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.testimonial-content {
+    padding: 4.5rem 2rem 2rem;
+    text-align: center;
+    transition: padding 0.4s ease;
+}
+
+.testimonial-content h3 {
+    margin-bottom: 0.25rem;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.testimonial-content span {
+    display: block;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.testimonial-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-style: italic;
+    min-height: 95px;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-card:hover .testimonial-card-header {
+    padding-top: 2.5rem;
+}
+
+.testimonial-card:hover .testimonial-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border-width: 6px;
+    transform: translate(-50%, -5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+.testimonial-card:hover .testimonial-content {
+    padding-top: 4.5rem;
+}
+
+.testimonial-card:hover .testimonial-content h3 {
+    color: var(--primary-color);
+}
+
+@media (max-width: 1024px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        margin: 0 auto;
+        max-width: 360px;
+    }
+
+    .testimonial-card:hover .testimonial-avatar {
+        width: 125px;
+        height: 125px;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Responsive Projects */
+@media (max-width: 768px) {
+    .swiper-slide {
+        width: min(320px, 85vw);
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    .projects-swiper {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .projects-swiper .swiper-button-next,
+    .projects-swiper .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+    }
+
+    .projects-swiper .swiper-button-next::after,
+    .projects-swiper .swiper-button-prev::after {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-slide {
+        width: min(280px, 90vw);
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-info {
+        padding: 1.25rem;
+    }
+
+    .project-info h3 {
+        font-size: 1.25rem;
+    }
+}
+

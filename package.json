@@ -1,0 +1,33 @@
+{
+  "name": "gds-infraestructura",
+  "version": "1.0.0",
+  "description": "Sitio web para GDS INFRAESTRUCTURA - Empresa de construcción con sistema de cotizaciones",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "construccion",
+    "infraestructura",
+    "cotizaciones",
+    "web"
+  ],
+  "author": "GDS INFRAESTRUCTURA",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
+
